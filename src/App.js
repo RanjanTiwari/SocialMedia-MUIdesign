@@ -1,26 +1,20 @@
-import Button from "@mui/material/Button";
-import {Add, Settings} from "@mui/icons-material";
+import { Stack } from "@mui/material";
+import { Box, Container } from "@mui/system";
+import React from "react";
+import Feed from "./components/Feed";
+import Navbar from "./components/Navbar";
+import Rightbar from "./components/Rightbar";
+import Slidebar from "./components/Slidebar";
 
-function App() {
+export default function App() {
   return (
-    <div>
-      <Button 
-      variant="text"
-      color="secondary"
-      >Hello World</Button>
-      <Button 
-      startIcon={<Settings/>} 
-      variant="contained"
-      color="success"
-      size="small"
-      >
-        Settings
-      </Button>
-      <Button startIcon={<Add />} variant="outlined">
-        Add me
-      </Button>
-    </div>
+    <Container >
+      <Stack  direction="row" spacing={2} justifyContent="space-between">
+      {/*Navbar*/}
+      <Slidebar />
+      <Feed />
+      <Rightbar />
+      </Stack>
+    </Container>
   );
 }
-
-export default App;
